@@ -1,13 +1,26 @@
 # vps-vpn
 
-## 安装并配置 v2ray
+## 事前准备
 
-1. cn2 VPS 一台；
-2. 安装并配置 v2ray， 目前使用 vmess 类型连接；
+cn2 节点 VPS 一台；
+
+## 服务端安装并配置 v2ray
+
+1. 安装
+
+`$ bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)`
+
+`$ bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)`
+
+2. 填写配置文件
+
+3. 开启 v2ray，`$ sudo systemctl start v2ray`。
+
+删除 v2ray: `$ bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh) --remove`
 
 ### vmess 服务端配置
 
-`
+```
 // /usr/local/etc/v2ray/config.json
 {
   "inbounds": [
@@ -31,11 +44,25 @@
     }
   ]
 }
-`
+```
+
 ## 开启服务器 BBR
 
-1. `$sudo vim /etc/sysctl.conf`;
-2. `net.core.default_qdisc=fq
-net.ipv4.tcp_congestion_control=bbr`;
+`$ sudo vim /etc/sysctl.conf `
+
+```
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
+```
+
+使配置生效
+
+`$ sysctl -p`
+
+检查是否开启成功
+
+`$ sudo sysctl net.ipv4.tcp_available_congestion_control`
+
+输出 bbr 则开启成功
 
 - 注：内核大于4.9.
