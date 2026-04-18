@@ -1,10 +1,12 @@
-# vps-vpn
+# vps-v2ray
 
 ## 事前准备
 
 cn2 节点 VPS 一台。
 
-## 服务端安装并配置 v2ray
+## 自行安装
+
+### 服务端安装 v2ray
 
 1. 安装
 
@@ -46,7 +48,7 @@ cn2 节点 VPS 一台。
 }
 ```
 
-## 开启服务器 BBR
+### 开启服务器 BBR（可选）
 
 `$ sudo vim /etc/sysctl.conf `
 
@@ -66,3 +68,11 @@ net.ipv4.tcp_congestion_control=bbr
 输出 bbr 则开启成功
 
 - 注：内核大于4.9.
+
+## 一键脚本安装
+
+1. 下载一键安装脚本：`$ curl -O https://raw.githubusercontent.com/kristianhuang/vps-v2ray/refs/heads/main/install.sh`;
+2. 运行一键安装脚本：`$ sudo ./install.sh`;
+3. 下载开启 BBR 脚本：
+4. 下载一键删除脚本：`$ curl -O https://raw.githubusercontent.com/kristianhuang/vps-v2ray/refs/heads/main/remove.sh`;
+
