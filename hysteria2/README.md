@@ -69,7 +69,7 @@ masquerade:
 - 开启 `$ systemctl start hysteria-server.service`;
 - 重启 `$ systemctl restart hysteria-server.service`;
 - 状态检查 `$ systemctl status hysteria-server.service`；
-- 关闭 `systemctl stop hysteria-server.service`。
+- 关闭 `$ systemctl stop hysteria-server.service`。
 
 ### 删除
 
