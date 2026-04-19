@@ -4,6 +4,7 @@
   * [服务端](#服务端)
     * [流程说明](#流程说明)
     * [服务端配置文件](#服务端配置文件)
+    * [相关使用命令](#相关使用命令)
     * [删除](#删除)
 <!-- TOC -->
 
@@ -62,6 +63,13 @@ masquerade:
     url: https://baidu.com # 伪装网站, 不建议再使用微软旗下的相关域名
     rewriteHost: true
 ```
+
+### 相关使用命令
+
+- 开启 `$ systemctl start hysteria-server.service`;
+- 重启 `$ systemctl restart hysteria-server.service`;
+- 状态检查 `$ systemctl status hysteria-server.service`；
+- 关闭 `systemctl stop hysteria-server.service`。
 
 ### 删除
 
